@@ -12,6 +12,57 @@
 /* setting up default font, font size and background color */
 html {
   font-family: var(--system-ui);
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
   background-color: rgb(209, 209, 209);
+}
+
+/* Divides the page between the left navbar and the right area */
+.overall-flex-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sets flex for navbar on the left */
+.flex-navbar-ver {
+  display: flex;
+  padding: 30px;
+  padding-top: 20px;
+  padding-right: clamp(50px, 50% 100px);
+  height: 100%;
+  width: clamp(200px, 50%, 302.16px);
+  font-weight: 500;
+  color: white;
+
+  background-color: rgb(90, 90, 182);
+}
+
+/* Remove default link and list styling */
+.flex-navbar-ver a,
+ul {
+  color: inherit;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+/* Change the default padding bottom set up and give title bigger font size */
+.flex-navbar-ver .title {
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+
+/* Making the logo bigger and position it properly*/
+.title .logo {
+  font-size: 1.8rem;
+  bottom: -7px;
+}
+
+.flex-navbar-ver li {
+  padding-bottom: 15px;
+}
+
+/* bottom is needed otherwise they float a bit */
+.material-icons {
+  position: relative;
+  bottom: -3px;
+  margin-right: 10px;
 }
