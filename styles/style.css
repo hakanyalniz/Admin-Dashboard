@@ -1,6 +1,8 @@
 :root {
   --system-ui: "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --vertical-navbar-width: clamp(200px, 50vw, 302.16px);
+  --horizontal-navbar-height: 8.5rem;
 }
 
 * {
@@ -17,9 +19,11 @@ html {
 }
 
 /* Divides the page between the left navbar and the right area */
-.overall-flex-container {
-  display: flex;
-  /* grid-template-columns: auto 1fr; */
+.overall-grid-container {
+  display: grid;
+  /* The size is equal to the size of the vertical navbar, it also is responsive with it */
+  grid-template-columns: var(--vertical-navbar-width) repeat(3, 1fr);
+  grid-template-rows: var(--horizontal-navbar-height) repeat(3, 1fr);
 
   height: 100vh;
 }
@@ -27,17 +31,19 @@ html {
 /* Sets flex for navbar on the left */
 .flex-navbar-ver {
   display: flex;
+  font-weight: 500;
+  color: white;
+  background-color: rgb(90, 90, 182);
+
+  height: 100%;
+  width: var(--vertical-navbar-width);
+  min-width: 200px;
   padding: 30px;
   padding-top: 20px;
   /* This decreases the padding on the right to almost nonexistant when resized */
-  padding-right: clamp(10px, 9%, 60px);
-  height: 100%;
-  width: clamp(200px, 65%, 302.16px);
-  min-width: 200px;
-  font-weight: 500;
-  color: white;
+  padding-right: clamp(10px, 9vw, 60px);
 
-  background-color: rgb(90, 90, 182);
+  grid-row: 1 / 5;
 }
 
 /* Remove default link and list styling */
@@ -75,15 +81,23 @@ ul {
 .flex-navbar-hor {
   display: grid;
   background-color: white;
-  height: 8.5rem;
+  height: var(--horizontal-navbar-height);
   flex-grow: 1;
 
   box-shadow: 0px 3px 20px rgb(78, 78, 78);
 
+  /* These are settings for the grid within the navbar */
   grid-template-rows: repeat(2, 50%);
   grid-template-columns: 70% 30%;
+
+  /* These are for the overall one */
+  grid-column: 2 / 5;
 }
 
 .dash-body {
   display: grid;
+  background-color: red;
+
+  /* Shorthand for stretching the content within the cells */
+  grid-area: 2 / 2 / 5 / 5;
 }
