@@ -103,7 +103,7 @@ ul {
   background-color: white;
   height: var(--horizontal-navbar-height);
 
-  box-shadow: 0px 3px 20px rgb(78, 78, 78);
+  box-shadow: 0px 1px 10px rgb(78, 78, 78);
   padding: 15px 30px;
   padding-right: 40px;
   gap: 10px;
@@ -215,7 +215,6 @@ ul {
 
 .dash-body {
   display: grid;
-  position: relative;
   grid-template-columns: 80% 1fr;
   background-color: var(--background-color);
 
