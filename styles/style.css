@@ -102,7 +102,6 @@ ul {
   position: relative;
   background-color: white;
   height: var(--horizontal-navbar-height);
-  flex-grow: 1;
 
   box-shadow: 0px 3px 20px rgb(78, 78, 78);
   padding: 15px 30px;
@@ -225,17 +224,21 @@ ul {
 }
 
 /* For the Your Projects title */
-.dash-body > p {
+.dash-body-title {
   position: absolute;
+  top: 25px;
+  left: 25px;
+  font-weight: 500;
 }
 
 .projects {
   display: grid;
+  position: relative;
   grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   padding: 20px;
-  padding-top: 50px;
+  padding-top: 60px;
   gap: 15px;
   overflow: auto;
 }
@@ -243,10 +246,27 @@ ul {
 .projects > .card {
   height: 300px;
   min-width: 300px;
-  border-left: 3px solid blue;
+  padding: 30px;
+
+  border-left: 7px solid var(--main-color-purple-darker);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(153, 153, 153);
   background-color: white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: inherit;
+  padding-bottom: 10px;
+}
+
+.card > p {
+  font-size: 0.9rem;
 }
 
 .news-bar {
