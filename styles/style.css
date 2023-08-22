@@ -5,6 +5,8 @@
   --horizontal-navbar-height: 8.5rem;
 
   --background-color: rgb(221, 221, 221);
+  --main-color-purple: rgb(90, 90, 182);
+  --main-color-purple-darker: rgb(77, 77, 182);
 }
 
 * {
@@ -35,12 +37,13 @@ html {
   display: flex;
   font-weight: 500;
   color: white;
-  background-color: rgb(90, 90, 182);
+  background-color: var(--main-color-purple);
 
   height: 100%;
   width: var(--vertical-navbar-width);
   min-width: 200px;
   padding: 30px;
+  padding-left: 20px;
   padding-top: 20px;
   /* This decreases the padding on the right to almost nonexistant when resized */
   padding-right: clamp(0px, 4vw, 60px);
@@ -67,7 +70,7 @@ ul {
 }
 
 /* Making the logo bigger and position it properly*/
-.title .logo {
+.flex-navbar-ver .title .logo {
   font-size: 1.8rem;
   bottom: -7px;
 }
@@ -83,18 +86,18 @@ ul {
 
 .flex-navbar-ver li:hover {
   color: black;
-  background-color: rgb(77, 77, 182);
+  background-color: var(--main-color-purple-darker);
 }
 
 /* bottom is needed otherwise they float a bit */
-.material-icons {
+.flex-navbar-ver .material-icons {
   position: relative;
   bottom: -3px;
   margin-right: 10px;
 }
 
 /* The white nav bar on top */
-.flex-navbar-hor {
+.grid-navbar-hor {
   display: grid;
   position: relative;
   background-color: white;
@@ -102,13 +105,113 @@ ul {
   flex-grow: 1;
 
   box-shadow: 0px 3px 20px rgb(78, 78, 78);
+  padding: 15px 30px;
+  padding-right: 40px;
+  gap: 10px;
 
   /* These are settings for the grid within the navbar */
   grid-template-rows: repeat(2, 50%);
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 60% 40%;
 
   /* These are for the overall one */
   grid-column: 2 / 5;
+}
+
+/* For the profile section */
+.grid-navbar-hor .profile {
+  display: flex;
+  align-items: center;
+  direction: rtl;
+}
+
+.grid-navbar-hor .profile img {
+  height: 50px;
+}
+
+.profile > * {
+  padding: 0 10px;
+}
+
+.profile .username {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Searchbar styles */
+.search-bar button {
+  position: relative;
+  background: none;
+  border: none;
+  bottom: -3px;
+}
+
+.search-bar input {
+  padding: 0 10px;
+}
+
+.search-bar button:hover {
+  background-color: rgb(212, 212, 212);
+  border-radius: 10px;
+}
+
+.mag-search {
+  position: relative;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+}
+
+#search {
+  width: calc(100% - 40px);
+  height: 25px;
+  border: none;
+  background-color: rgb(216, 216, 216);
+  border-radius: 10px;
+}
+
+/* Control buttons styles */
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  direction: rtl;
+}
+
+.control-buttons button {
+  font-family: inherit;
+  font-size: 0.8rem;
+  transition: background-color 0.5s;
+
+  padding: 10px;
+  margin-right: 20px;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--main-color-purple);
+  color: white;
+}
+
+.control-buttons button:hover {
+  background-color: var(--main-color-purple-darker);
+}
+
+.profile-greeting {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  padding-left: 20px;
+  gap: 5px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.profile-greeting img {
+  grid-row: 1 / 3;
+  height: 65px;
+}
+
+.profile-greeting .username {
+  font-size: 25px;
 }
 
 .dash-body {
@@ -121,6 +224,7 @@ ul {
   grid-area: 2 / 2 / 5 / 5;
 }
 
+/* For the Your Projects title */
 .dash-body > p {
   position: absolute;
 }
@@ -149,11 +253,12 @@ ul {
   display: flex;
   flex-direction: column;
   padding-top: 50px;
+  overflow: auto;
 }
 
 .news-bar > div {
   height: 300px;
-  min-width: 300px;
+  min-width: 200px;
   margin: 0 10px;
   margin-bottom: 10px;
 
