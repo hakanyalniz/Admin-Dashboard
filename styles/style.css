@@ -43,7 +43,7 @@ html {
   padding: 30px;
   padding-top: 20px;
   /* This decreases the padding on the right to almost nonexistant when resized */
-  padding-right: clamp(10px, 9vw, 60px);
+  padding-right: clamp(0px, 4vw, 60px);
 
   grid-row: 1 / 5;
 }
@@ -54,6 +54,10 @@ ul {
   color: inherit;
   text-decoration: none;
   list-style-type: none;
+}
+
+.flex-navbar-ver ul {
+  width: 100%;
 }
 
 /* Change the default padding bottom set up and give title bigger font size */
@@ -69,7 +73,17 @@ ul {
 }
 
 .flex-navbar-ver li {
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+  padding: 0 10px;
+  padding-right: auto;
   padding-bottom: 15px;
+  border-radius: 10px;
+}
+
+.flex-navbar-ver li:hover {
+  color: black;
+  background-color: rgb(77, 77, 182);
 }
 
 /* bottom is needed otherwise they float a bit */
