@@ -34,7 +34,7 @@ html {
 }
 
 /* For navbar ver compact version */
-.overall-grid-container .compact {
+.overall-grid-container.compact {
   grid-template-columns: 60px repeat(3, 1fr);
 }
 
@@ -230,7 +230,7 @@ ul {
   margin-left: max(30px, 10%);
 }
 
-.search-bar .hamburger-menu {
+.search-bar #hamburger-menu {
   font-size: 30px;
 }
 
