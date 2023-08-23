@@ -1,19 +1,15 @@
 function switchNavbar() {
   if (switchStatus == 0) {
-    flexNavbarVer.style.zIndex = -1;
-    flexNavbarVer.style.opacity = 0;
+    flexNavbarVer.style.display = "none";
 
-    flexNavbarVerCompact.style.zIndex = 0;
-    flexNavbarVerCompact.style.opacity = 1;
+    flexNavbarVerCompact.style.display = "flex";
     overallGridContainer.classList.add("compact");
 
     switchStatus = 1;
   } else if (switchStatus == 1) {
-    flexNavbarVer.style.zIndex = 0;
-    flexNavbarVer.style.opacity = 1;
+    flexNavbarVer.style.display = "flex";
 
-    flexNavbarVerCompact.style.zIndex = -1;
-    flexNavbarVerCompact.style.opacity = 0;
+    flexNavbarVerCompact.style.display = "none";
     overallGridContainer.classList.remove("compact");
 
     switchStatus = 0;
