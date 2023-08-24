@@ -234,6 +234,7 @@ ul {
   height: 30px;
   border-radius: 10px;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .search-bar #hamburger-menu:hover {
